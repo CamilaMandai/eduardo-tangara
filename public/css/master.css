@@ -12,17 +12,6 @@
   --montserrat: 'Montserrat', sans-serif;
 }
 
-/* *,
-*::before,
-*::after{
-  box-sizing: border-box;
-  margin:0;
-  padding: 0;
-} */
-
-
-
-
 
 /************tag selector*******/
 a{
@@ -63,8 +52,6 @@ li{
 
 .nav-checkbox{
   display: none;
-  /* border: solid 1px; */
-  /* margin-right: 1rem; */
 }
 
 .menu-hamb, .close{
@@ -131,34 +118,6 @@ li{
     margin-right: 4rem;
   }
 }
-
-/* .menu{
-  background-color: rgba(255,255,255,0.9);
-  width: 100%;
-  position: fixed;
-  z-index:1;
-  top:0;
-}
-
-.BWlogo{
-  float: left;
-  width: 50px;
-  margin-left: 10px;
-  transform: matrix(-1, 0, 0, 1, 0, 0);
-}
-
-.BWlogo:hover{
-  transform: matrix(1, 0, 0, 1, 0, 0);
-}
-
-.nav{
-  float: right;
-}
-
-.nav li{
-  display: inline-block;
-  padding: 35px;
-} */
 
 
 /**************** Pagina inicial********* */
@@ -323,84 +282,6 @@ li{
 
 
 /*********************Paginas de atividades************************** */
-
-/* **************pagina /livros ************ */
-/*
-.livros{
-  width: 100%;
-  background-color:var(--cinza-fundo);
-  padding: 5rem 0 0 0;
-  box-shadow: 59px 10px 33px rgba(0, 0, 0, 0.25);
-  height: 33rem;
-}
-
-.livros img{
-  width: 25%;
-  margin-left: 15rem;
-  border-radius: 5px;
-  border: dashed 1px rgba(0, 0, 0, 0.25);
-}
-
-.descricao{
-   position: relative;
-   top:-30rem;
-   left: 15rem;
-   width:25%;
- }
-
- .descricao h4, h3{
-   font-family: var(--baskerville);
-   padding-bottom: 1rem;
-   font-size: 1.5rem;
-   color: var(--azul-bonito);
- }
-
- .descricao p{
-   margin-top: 2rem;
-   font-family: var(--montserrat);
-   line-height: 1.6;
- }
-
- .btn{
-   width: 100%;
-   height: 50px;
-   background: #F18303;
-   border-radius: 19px;
-   border:none;
-   color: white;
-   font-family: var(--inder);
-   font-size: 1.2rem;
-   letter-spacing: 0.1rem;
-   margin-bottom: 0;
- }
-
- .btn-form{
-   position: absolute;
-   left: 46.8rem;
-   top: 35rem;
-   height: 60px;
-   margin:0;
-   width: 10%;
- }
-
-
-.livros form{
-  width: 100%;
-  height: 20px;
-}
-
-.btn:hover{
-   box-shadow: 6px 3px 20px rgba(34, 122, 122, 0.68);
-   margin-left: 0.05rem;
-   margin-top: 0.05rem;
-   cursor: pointer;
-}
-
-#livros{
-  line-height: 40px;
-  margin:0;
-  padding:0;
-} */
 
 
 .paginas{
@@ -663,79 +544,6 @@ label{
   padding-bottom: 10rem;
 }
 
-/************************lambe************* */
-
-
-/* .lambe{
-  width: 90%;
-  background-color:black;
-  padding: 6rem 0 0 0;
-  box-shadow: 59px 10px 33px rgba(0, 0, 0, 0.25);
-  height: 33rem;
-  font-family: var(--montserrat);
-  color:var(--cinza);
-  border-radius: 40px;
-} */
-
-/* .lambe img{
-  width: 35%;
-  margin-left: 5rem;
-} */
-
-/* #lambe-h1{
-  font-size: 20px;
-  font-weight: normal;
-  padding-top: 3rem;
-  padding-bottom: 0;
-  color:#CACACA;
-  font-family: var(--inder);
-}
-
-#lambe h5{
-  padding-top: 2rem;
-}
-
-#lambe h4{
-  padding-bottom: 0.3rem;
-  padding-top: 1rem;
-  color: #20ACA4;
-} */
-
-/* #contato-lambe{
-  top:36rem;
-  left: 47.5rem;
-} */
-
-/* ***********contacao***************** */
-/* .contacao{
-  width: 100%;
-  background-color: var(--cinza-fundo);
-  padding: 9rem 0 0 0;
-  box-shadow: 59px 10px 33px rgba(0, 0, 0, 0.25);
-  height: 36rem;
-  font-family: var(--montserrat);
-  color:var(--cinza);
-}
-
-.contacao img{
-  margin-top: 4rem;
-  width: 35%;
-  margin-left: 10rem;
-  border-radius: 5px;
-  padding-bottom: 0;
-}
-
-.contacao h3{
-  padding-top: 4rem;
-  padding-bottom: 2rem;
-}
-
-
-#contato-contacao{
-  top:30rem;
-  left: 46.5rem;
-} */
-
 @media only screen and (max-width:750px){
   .formulario input, #msg{
     width:90%;
@@ -791,15 +599,9 @@ label{
 .blog-post{
   width: 100%;
   background-color: var(--cinza-fundo);
-  /* background-image: url("../images/nightSky.jpg"); */
-  /* background-position: center; /* Center the image */ */
-  /* background-repeat: no-repeat; /* Do not repeat the image */ */
-  /* background-size: cover; */ */
   padding: 20rem 0 0 0;
-  /* height: 35rem; */
   font-family: var(--montserrat);
   color:var(--cinza);
-  /* margin-top: 89px; */
 }
 
 .individual-post{
@@ -812,7 +614,6 @@ label{
   font-size: 2rem;
   font-family: var(--baskerville);
   color:var(--azul);
-  /* color:black; */
 }
 
 .individual-post h2{
