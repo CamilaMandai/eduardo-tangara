@@ -1,0 +1,24 @@
+<%- include("partials/header") -%>
+<div class="empty"></div>
+<section>
+  <article class="formulario">
+    <div class="campo">
+      <h1>Login</h1>
+    </div>
+    <form class="" action="/login" method="post">
+      <div class="campo">
+        <label for="nomemsg">Usuário</label>
+        <input type="text" name="username" id="username">
+      </div>
+      <div class="campo">
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password">
+      </div>
+      <div class="campo">
+        <input id="formulario-btn" type="submit" name="" value="login">
+      </div>
+    </form>
+  </article>
+</section>
+
+<%- include("partials/footer") -%>

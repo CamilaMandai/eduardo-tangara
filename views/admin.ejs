@@ -1,0 +1,35 @@
+<%-include("partials/header")-%>
+<div class="empty">
+
+</div>
+<section class="blog">
+  <div class="logout-criar">
+    <form class="criar" action="/new" method="post">
+      <input class="btn btn-admin" type="submit" name="" value="Novo Post">
+    </form>
+    <form class="criar" action="/logout" method="post">
+      <input class="btn btn-admin" id="logout" type="submit" name="" value="Logout">
+    </form>
+  </div>
+  <hr>
+
+  <article class="posts-edit">
+    <h1 class="h1-edit">Posts</h1>
+    <%for(let p of posts.reverse()){%>
+      <div class="post-abstract">
+        <h3><%=p.titulo%></h3>
+        <p>
+           <%= p.postagem %>
+        </p>
+        <div class="btns-editar-deletar">
+          <a class="btn-delete" id="btn-editar" href="/posts/<%=p.id%>/edit">Editar</a>
+          <form class="" action="/posts/<%= p.id %>?_method=DELETE" method="post">
+               <input class="btn-delete" type="submit" name="delete_btn" value="Apagar">
+          </form>
+        </div>
+      </div>
+   <%}%>
+  </article>
+</section>
+
+<%-include("partials/footer")-%>

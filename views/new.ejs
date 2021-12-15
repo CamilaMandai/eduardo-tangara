@@ -1,0 +1,38 @@
+<%-include("partials/header")-%>
+
+<div class="empty"></div>
+<section>
+
+  <article class="formulario" id="form-newPost">
+    <div class="campo">
+      <h1>Criar Post</h1>
+    </div>
+    <form class="" action="/posts" method="post">
+      <div class="campo new-campo">
+        <label for="postTitle">Título</label>
+        <input type="text" name="postTitle" id="postTitle" value="">
+      </div>
+      <div class="campo new-campo">
+        <label for="subTitle">Subtítulo</label>
+        <input type="text" name="subTitle" id="subTitle" value="">
+      </div>
+      <div class="campo new-campo">
+        <label for="msg">Conteúdo</label>
+        <textarea id="msg" name="postContent" rows="10" cols="90" required autocomplete="off"></textarea>
+      </div>
+      <div class="campo new-campo">
+        <label for="keywords">Palavras-chave</label>
+        <input type="text" name="keywords" id="keywords" value="">
+      </div>
+      <div class="campo new-campo">
+        <input id="formulario-btn" type="submit" name="" value="Enviar">
+      </div>
+
+
+    </form>
+  </article>
+
+</section>
+
+</body>
+</html>

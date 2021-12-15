@@ -1,0 +1,15 @@
+<%-include("partials/header")-%>
+<div class="empty"></div>
+<section class="blog">
+  <article class="post-abstract">
+    <%for(let p of posts.reverse()){%>
+      <a href="/posts/<%=_.kebabCase(p.titulo) %>" ><h2><%=p.titulo%></h2></a>
+      <p>
+         <%= p.postagem.substring(0,200)+"..." %>
+         <a href="/posts/<%=_.kebabCase(p.titulo) %>"> Leia mais</a>
+      </p>
+   <%}%>
+  </article>
+</section>
+
+<%-include("partials/footer")-%>

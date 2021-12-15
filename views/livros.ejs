@@ -1,0 +1,28 @@
+<%-include("partials/header")-%>
+
+<div class="empty"></div>
+<section class="paginas">
+  <article class="cartao">
+    <img id="img-livro" src="images/CapaInverno.png" alt="capa-livro">
+    <div class="descricao">
+      <h3>Crispin e o Andarilho </h3>
+      <h4>Inverno</h4>
+      <p>
+        Uma estória ilustrada com bonecos, cujos personagens criam vida nas
+        paisagens naturais . Os locais onde a estória acontece são pontos
+        turísticos importantes não só pelas belezas naturais, mas também
+        por suas lendas, histórias e mistérios que fazem parte do caldeirão
+        cultural do município de São Thomé das Letras - Minas Gerais.
+      </p>
+      <div class="btn-form">
+        <form action="/livros" method="post">
+          <input type="text" name="assunto" value="Quero adquirir um livro!!!" hidden>
+          <input class="btn" type="submit" value="Eu quero!">
+        </form>
+      </div>
+    </div>
+
+  </article>
+</section>
+
+<%-include("partials/footer")-%>

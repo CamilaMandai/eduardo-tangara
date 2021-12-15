@@ -1,0 +1,40 @@
+<%-include("partials/header")-%>
+
+<div class="empty"></div>
+<section>
+
+  <article class="formulario"  id="form-newPost">
+    <div class="campo">
+      <h1>Editar Post</h1>
+    </div>
+    <form action="/posts/<%=post.id%>?_method=PUT" method="post">
+      <div class="campo new-campo">
+        <label for="postTitle">Título</label>
+        <input type="text" name="postTitle" id="postTitle" value="<%=post.titulo%>">
+      </div>
+      <div class="campo new-campo">
+        <label for="subTitle">Subtítulo</label>
+        <input type="text" name="subTitle" id="subTitle" value="<%=post.subtitulo%>">
+      </div>
+      <div class="campo new-campo">
+        <label for="dia">Data</label>
+        <input type="text" name="dia" id="dia" value="<%=post.data%>">
+      </div>
+      <div class="campo new-campo">
+        <label for="msg">Conteúdo</label>
+        <textarea id="msg" name="postContent" id="postContent" rows="10" cols="90"><%=post.postagem%></textarea>
+      </div>
+      <div class="campo new-campo">
+        <label for="keywords">Palavras-chave</label>
+        <input type="text" name="keywords" id="keywords" value="<%=post.keywords%>">
+      </div>
+      <div class="campo new-campo">
+        <input id="formulario-btn" type="submit" name="" value="Enviar">
+      </div>
+    </form>
+  </article>
+
+</section>
+
+</body>
+</html>

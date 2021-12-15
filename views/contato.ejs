@@ -1,0 +1,32 @@
+<%- include("partials/header") -%>
+
+<div class="empty"></div>
+<section>
+  <article class="formulario">
+    <div class="campo">
+      <h1>Entre em contato</h1>
+    </div>
+    <form class="" action="/contato" method="post">
+      <div class="campo">
+        <label for="nomemsg">Nome*</label>
+        <input type="text" name="nome" id="nomemsg" required value="">
+      </div>
+      <div class="campo">
+        <label for="email">Email*</label>
+        <input type="email" name="email" id="email" value="" required>
+      </div>
+      <div class="campo">
+        <label for="assunto">Assunto*</label>
+        <input type="text" name="assunto" id="assunto" value="<%=subject%>" autocomplete="off">
+      </div>
+      <div class="campo">
+        <label for="msg">Mensagem*</label>
+        <textarea name="msg" id="msg" class="msg" rows="8" cols="80" required autocomplete="off"></textarea>
+      </div>
+      <div class="campo">
+        <input id="formulario-btn" type="submit" name="" value="Enviar">
+      </div>
+    </form>
+  </article>
+</section>
+<%- include("partials/footer") -%>

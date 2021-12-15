@@ -1,0 +1,21 @@
+<%-include("partials/header")-%>
+<div class="empty"></div>
+<img class="tangara-post" src="/images/tangaraLogoAsa.png" alt="logo-tangara">
+<section class="blog-post">
+  <article class="individual-post">
+    <h1><%=postagem.titulo%></h1>
+    <h2><%=postagem.subtitulo%></h2>
+    <p><%-texto%></p>
+  </article>
+</section>
+
+</body>
+<footer class="footer-PostIndividual">
+  <% if(postProximo!=""){%>
+<a href="/posts/<%=_.kebabCase(postProximo)%>"><< Anterior</a>
+<%}%>
+  <% if(postAnterior!=""){%>
+<a href="/posts/<%=_.kebabCase(postAnterior)%>">Próximo >></a>
+<%}%>
+</footer>
+</html>
