@@ -488,6 +488,10 @@ li{
   color:var(--cinza);
 }
 
+#lambe p{
+  color: #B5B5B5;
+}
+
 #lambe-h1{
   font-size: 20px;
   font-weight: normal;
