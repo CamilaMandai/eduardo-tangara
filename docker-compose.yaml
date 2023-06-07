@@ -1,0 +1,7 @@
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo:5.0.7
+    restart: always
+    ports:
+      - 27017:27017

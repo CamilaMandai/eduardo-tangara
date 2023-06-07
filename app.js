@@ -13,9 +13,7 @@ const Mensagem = require("./models/contatos.js")
 const Post = require("./models/posts.js")
 const User = require("./models/users.js")
 const methodOverride = require("method-override")
-const bcrypt = require("bcrypt");
 const session = require("express-session");
-const saltRounds = 10;
 app.use(express.static(path.join(__dirname,"public")))
 // app.use(express.static("public"))
 app.use(methodOverride("_method"));
@@ -52,11 +50,11 @@ app.get("/", (req, res)=>{
 // livros /////////////////////
 app.route("/livros")
 
-.get((req,res)=>{
+.get((_req,res)=>{
   res.render("livros");
 })
 .post((req,res)=>{
-  subject=req.body.assunto;
+  subject = req.body.assunto;
   res.redirect("/contato");
 });
 
@@ -64,9 +62,9 @@ app.route("/livros")
 // contato //////////////////////////
 app.route("/contato")
 
-.get((req, res)=>{
+.get((_req, res)=>{
   const assunto = subject;
-  subject="";
+  subject = "";
   res.render("contato", {subject: assunto});
 })
 .post(async(req,res)=>{
@@ -76,13 +74,13 @@ app.route("/contato")
       const {msg} = req.body;
       const contato = new Mensagem(
         {
-          nome:nome,
+          nome: nome,
           email: email,
-          assunto:assunto,
-          mensagem:msg
+          assunto: assunto,
+          mensagem: msg
         })
       await contato.save();
-      res.render("enviado", {nome:nome});//melhorar a pagina de enviados
+      res.render("enviado", { nome: nome });//melhorar a pagina de enviados
 });
 
 
@@ -90,11 +88,11 @@ app.route("/contato")
 // lambe /////////////////
 app.route("/lambe")
 
-.get((req,res)=>{
+.get((_req, res)=>{
   res.render("lambe");
 })
-.post((req,res)=>{
-  subject=req.body.assunto;
+.post((req, res)=>{
+  subject = req.body.assunto;
   res.redirect("/contato");
 });
 
@@ -102,11 +100,11 @@ app.route("/lambe")
 // contacao /////////
 app.route("/contacao")
 
-.get((req,res)=>{
+.get((_req, res)=>{
   res.render("contacao");
 })
-.post((req,res)=>{
-  subject=req.body.assunto;
+.post((req, res)=>{
+  subject = req.body.assunto;
   res.redirect("/contato");
 });
 
@@ -115,11 +113,11 @@ app.route("/contacao")
 // rotas: /posts , /posts/:title
 
 app.route("/posts")
-.get(async(req,res)=>{
+.get(async(_req, res)=>{
   const posts = await Post.find({});
   res.render("posts", {posts:posts,_:_});
 })
-.post(async(req,res)=>{
+.post(async(req, res)=>{
   if(req.session.user_id){
     const titulo = req.body.postTitle
     const subtitulo = req.body.subTitle
@@ -127,11 +125,11 @@ app.route("/posts")
     const keywords = req.body.keywords
     const data = Date()
     const newPost = new Post({
-      titulo:titulo,
-      subtitulo:subtitulo,
-      postagem: postagem,
-      data:data,
-      keywords:keywords
+      titulo,
+      subtitulo,
+      postagem,
+      data,
+      keywords
     })
     await newPost.save()
   // res.send("post com sucesso")
@@ -226,26 +224,39 @@ app.get("/admin", async(req,res)=>{
   else{res.redirect("/login")}
 })
 
+app.post("/register", async(req, res) => {
+  // const { username, password } = req.body;
+  const username = 'eduardo';
+  const password = 'batatinha';
+  console.log(username, password);
+  await User.create(username, password);
+  res.send("Usuário cadastrado com sucesso")
+})
+
 app.post("/login", async(req,res)=>{
-  const {username, password} = req.body;
+  const { username, password } = req.body;
   //const password =req.body.password;
   //const foundUser = await User.findOne({username:username});
-  const foundUser = await User.validate(username, password);
-  if(foundUser){
-    // bcrypt.compare(password, foundUser.password, function(err,result){
-    //   if(result){
-        // const posts = await Post.find({});
-        // res.render("edit-criar",{posts:posts, _:_});
-        //logged=true;
-        req.session.user_id = foundUser._id;
-        res.redirect('/admin');
-      }
-    else res.send("Usuário ou senha incorreta");
+  try {
+    const foundUser = await User.validate(username, password);
+    if(foundUser){
+      // bcrypt.compare(password, foundUser.password, function(err,result){
+      //   if(result){
+          // const posts = await Post.find({});
+          // res.render("edit-criar",{posts:posts, _:_});
+          //logged=true;
+          req.session.user_id = foundUser._id;
+          res.redirect('/admin');
+        }
+      else res.send("Usuário ou senha incorreta");
+  } catch(e) {
+    return res.status(400).json({message: "Houve um erro"});
+  }
 })
 //   }else res.send("Usuário ou senha incorreta")
 // })
 
-app.post("/logout",(req,res)=>{
+app.post("/logout",(req, res)=>{
   //logged =false;
   req.session.destroy((err)=>{
     if(err){ console.log(err);}
@@ -254,7 +265,7 @@ app.post("/logout",(req,res)=>{
 })
 
 
-app.get("*",(req,res)=>{
+app.get("*",(_req, res)=>{
   res.render("not-found");
 })
 
